@@ -21,6 +21,14 @@ namespace webApi.Controllers
             return "value";
         }
 
+        // GET api/values
+        [Route("api/Values/All")]
+        [HttpGet]
+        public IEnumerable<string> All()
+        {
+            return new string[] { "value1", "value2" };
+        }
+
         // POST api/values
         public void Post([FromBody]string value)
         {
