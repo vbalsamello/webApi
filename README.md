@@ -6,3 +6,6 @@ El objetivo de este proyecto es crear un api e ir agregando comportamiento que c
 Utilizaremos el ejemplo generico y también agregaremos una conexión a una base de datos, creada para el ejemplo.
 
 En la Wiki del repositorio se explicara cada etapa.
+
+# Explicaciones
+Ir a la sección de wikis para ver todos los detalles.
