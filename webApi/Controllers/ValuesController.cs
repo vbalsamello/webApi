@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using webApi.Models;
 
 namespace webApi.Controllers
 {
@@ -21,10 +22,20 @@ namespace webApi.Controllers
             return "value";
         }
 
+
         // GET api/values
-        [Route("api/Values/All")]
+        [TokenAuthentication]
+        [Route("api/Values/AllPrivate")]
         [HttpGet]
         public IEnumerable<string> All()
+        {
+            return new string[] { "value1", "value2" };
+        }
+
+        // GET api/values
+        [Route("api/Values/AllPublic")]
+        [HttpGet]
+        public IEnumerable<string> All2()
         {
             return new string[] { "value1", "value2" };
         }
@@ -45,19 +56,6 @@ namespace webApi.Controllers
             return new string[] { "value1" + valId, "value2" + valId };
         }
 
-        // POST api/values
-        public void Post([FromBody]string value)
-        {
-        }
-
-        // PUT api/values/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE api/values/5
-        public void Delete(int id)
-        {
-        }
+        
     }
 }
